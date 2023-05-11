@@ -9,8 +9,9 @@
 
 int		ft_printf(const char *format, ...);
 int		ft_print_str(char *s);
-void	print_hex(unsigned long long p);
+void	print_hex_x(unsigned long long p, int *prit_num);
+void	print_hex_X(unsigned int p, int *prit_num);
 int		ft_nbr(int a);
-int		ft_print_ptr(unsigned long long p);
+int     ft_print_ptr(unsigned long long p);
 
 #endif
