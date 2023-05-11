@@ -6,18 +6,20 @@
 /*   By: sumjo <sumjo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 22:16:32 by sumjo             #+#    #+#             */
-/*   Updated: 2023/05/11 22:16:56 by sumjo            ###   ########.fr       */
+/*   Updated: 2023/05/11 23:03:22 by sumjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	print_nbr(int a)
+#include "ft_printf.h"
+
+int	print_nbr(int n)
 {
 	int		cnt;
 	int		num;
 	char	*arr;
 
 	cnt = 0;
-	num = a;
+	num = n;
 	while (num != 0)
 	{
 		num /= 10;
@@ -25,10 +27,10 @@ int	print_nbr(int a)
 	}
 	arr = malloc(cnt + 1);
 	arr[cnt] = '\0';
-	while (a != 0)
+	while (n != 0)
 	{
-		arr[--cnt] = (a % 10) + '0';
-		a /= 10;
+		arr[--cnt] = (n % 10) + '0';
+		n /= 10;
 	}
 	while (arr[cnt])
 	{
@@ -39,7 +41,7 @@ int	print_nbr(int a)
 	return (cnt);
 }
 
-int	ft_nbr(int a)
+int	ft_nbr(int n)
 {
 	int		i;
 	int		print_num;
@@ -51,17 +53,17 @@ int	ft_nbr(int a)
 		write(1, "0", 1);
 		return (1);
 	}
-	if (a == -2147483648)
+	if (n == -2147483648)
 	{
 		write(1, "-2147483648", 11);
 		return (11);
 	}
-	if (a < 0)
+	if (n < 0)
 	{	
 		write(1, "-", 1);
-		a *= -1;
+		n *= -1;
 		print_num += 1;
 	}
-	print_num += print_nbr(a);
+	print_num += print_nbr(n);
 	return (print_num);
 }

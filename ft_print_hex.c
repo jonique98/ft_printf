@@ -6,9 +6,11 @@
 /*   By: sumjo <sumjo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 22:18:33 by sumjo             #+#    #+#             */
-/*   Updated: 2023/05/11 22:19:48 by sumjo            ###   ########.fr       */
+/*   Updated: 2023/05/11 23:03:13 by sumjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 void	print_hex(unsigned long long p)
 {

@@ -6,7 +6,7 @@
 /*   By: sumjo <sumjo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:06:29 by josumin           #+#    #+#             */
-/*   Updated: 2023/05/11 22:46:38 by sumjo            ###   ########.fr       */
+/*   Updated: 2023/05/11 23:02:51 by sumjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	format_check(const char *format, va_list *args)
 		print_num += ft_print_ptr(va_arg(*args, unsigned long long));
 	else if (*format == 'd')
 		print_num += ft_nbr(va_arg(*args, int));
-	// else if (*format == 'i')
+	else if (*format == 'i')
+		print_num += ft_nbr(va_arg(*args, int));
 	// else if (*format == 'u')
 	// else if (*format == 'x')
 	// else if (*format == 'X')
@@ -65,13 +66,13 @@ int	ft_printf(const char *format, ...)
 	return (print_num);
 }
 
-// int main()
-// {
-// // 	// char c = 'a';
-// // 	// char *arr = "hi";
+int main()
+{
+// 	// char c = 'a';
+// 	// char *arr = "hi";
 
-// // 	// ft_printf("hi%c my%c name%c\n", '1', '2', c);
-// // 	// ft_printf("%s", arr);
-// 	printf("%d", ft_printf(" %d ", -123));
-// // 	// ft_printf("This is %d hello %d", a, b);
-// }
+// 	// ft_printf("hi%c my%c name%c\n", '1', '2', c);
+// 	// ft_printf("%s", arr);
+	printf("%d", ft_printf(" %d ", -123));
+// 	// ft_printf("This is %d hello %d", a, b);
+}
